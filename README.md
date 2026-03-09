@@ -1,34 +1,22 @@
-# Matcha Playground — Agent Energy Attribution
+# Matcha Playground
 
-Interactive demo showing energy-per-step attribution for multi-step AI agent workflows.
+AI models are measured on accuracy, latency, and token usage. But when you run multi-step agent workflows on your own GPUs, one metric stays invisible: **how much energy each step actually consumes.**
 
-## Run locally
+Matcha is building the observability layer that connects GPU hardware telemetry with AI workload traces — giving you energy-per-inference attribution across every model, step, and team.
 
-```bash
-npm install
-npm run dev
-```
+This playground demonstrates that visibility.
 
-Open [http://localhost:3000](http://localhost:3000)
+## Try it
+
+[demo.usematcha.dev](https://demo.usematcha.dev)
 
 ## How it works
 
-1. Click **▶ RUN AGENT** to simulate a multi-step AI agent researching Tesla stock
-2. Watch each step appear in the **Agent Traces** panel with energy, tokens, latency, and cost
-3. **GPU Metrics** show simulated power draw, utilization, and temperature in real-time
-4. After the run completes, click any **model name** in the traces to swap it (e.g. GPT-4o → Mistral 7B)
-5. Click **↻ RE-RUN AGENT** to see how the new model changes energy consumption
-6. **Run History** compares all your runs — see the energy savings
+1. Click **▶ RUN AGENT** — a multi-step AI agent runs a stock research workflow
+2. Each step appears in **Agent Traces** with energy (mWh), tokens, latency, and carbon (gCO₂)
+3. **GPU Metrics** show real-time power draw, utilization, and temperature
+4. After the run, click any **model name** to swap it (e.g. GPT-4o → Mistral 7B)
+5. Click **↻ RE-RUN** to see how the new model changes energy and output
+6. **Run History** compares runs side by side — see the savings
 
-## Deploy to Vercel
-
-```bash
-npm i -g vercel
-vercel
-```
-
-## Notes
-
-- All data is simulated — no API calls, no backend
-- Energy estimates based on published benchmarks per model family
-- Built with Next.js 14 + React 18
+Learn more at [usematcha.dev](https://usematcha.dev)
